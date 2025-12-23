@@ -6,13 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mall-tiny" />
+        <module name="mall-common" />
+        <module name="mall-mbg" />
+        <module name="mall-demo" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="mall-tiny" options="-parameters" />
+      <module name="mall-common" options="-parameters -parameters" />
+      <module name="mall-demo" options="-parameters -parameters" />
+      <module name="mall-mbg" options="-parameters -parameters" />
+      <module name="zrk-mall-swarm" options="-parameters -parameters" />
     </option>
   </component>
 </project>
