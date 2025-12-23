@@ -2,11 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mall-demo-01" />
         <module name="mall-common" />
+        <module name="mall-demo-02" />
         <module name="mall-mbg" />
         <module name="mall-demo" />
       </profile>
@@ -16,6 +19,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mall-common" options="-parameters -parameters" />
       <module name="mall-demo" options="-parameters -parameters" />
+      <module name="mall-demo-01" options="-parameters -parameters" />
+      <module name="mall-demo-02" options="-parameters -parameters" />
       <module name="mall-mbg" options="-parameters -parameters" />
       <module name="zrk-mall-swarm" options="-parameters -parameters" />
     </option>
