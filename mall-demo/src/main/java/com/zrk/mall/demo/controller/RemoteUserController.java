@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class RemoteUserController {
     @Autowired
     private RestTemplate restTemplate;
-    @Value("${service-url.nacos-user-service}")
+    @Value("${service-url.user-service}")
     private String userServiceUrl;
 
     @GetMapping("/{id}")

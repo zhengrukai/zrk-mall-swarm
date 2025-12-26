@@ -1,10 +1,22 @@
 spring:
   cloud:
-    nacos:
+#    nacos:
+#      discovery:
+#        server-addr: http://118.31.77.172:8848
+#      config:
+#        server-addr: http://118.31.77.172:8848
+#        file-extension: yaml
+    zookeeper:
+      # zookeeper连接地址
+      connect-string: 118.31.77.172:2181
       discovery:
-        server-addr: http://118.31.77.172:8848
+        # 作为服务注册
+        register: true
+        # 注册时使用IP地址而不是hostname
+        prefer-ip-address: true
       config:
-        server-addr: http://118.31.77.172:8848
-        file-extension: yaml
+        enabled: true
+        root: config
+        defaultContext: ${spring.application.name}
 service-url:
-  nacos-user-service: http://mall-demo-user # 项目名
+  user-service: http://mall-demo-user # 项目名
