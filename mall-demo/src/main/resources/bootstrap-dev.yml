@@ -1,22 +1,45 @@
 spring:
   cloud:
-#    nacos:
-#      discovery:
-#        server-addr: http://118.31.77.172:8848
-#      config:
-#        server-addr: http://118.31.77.172:8848
-#        file-extension: yaml
-    zookeeper:
-      # zookeeper连接地址
-      connect-string: 118.31.77.172:2181
+    nacos:
       discovery:
-        # 作为服务注册
-        register: true
-        # 注册时使用IP地址而不是hostname
-        prefer-ip-address: true
+        server-addr: http://118.31.77.172:8848
+        username: nacos
+        password: nacos
       config:
+        server-addr: http://118.31.77.172:8848
+        file-extension: yaml
+        username: nacos
+        password: nacos
+    openfeign:
+      httpclient:
+        connection-timeout: 5000
+      circuitbreaker:
+        enabled: true # 开启Circuit Breaker的服务降级功能
+      compression:
+        request:
+          enabled: true #是否对请求进行GZIP压缩
+          mime-types: text/xml,application/xml,application/json #指定压缩的请求数据类型
+          min-request-size: 2048 #超过该大小的请求会被压缩
+        response:
+          enabled: false #是否对响应进行GZIP压缩
+    loadbalancer:
+      cache: # 负载均衡缓存配置
+        enabled: true # 开启缓存
+        ttl: 5s # 设置缓存时间
+        capacity: 256 # 设置缓存大小
+      retry: # 重试配置
         enabled: true
-        root: config
-        defaultContext: ${spring.application.name}
+        max-retries-on-same-service-instance: 1
+        max-retries-on-next-service-instance: 1
+    sentinel:
+      transport:
+        dashboard: localhost:8080 # 配置 sentinel dashboard 地址
+        port: 8719
+feign:
+  sentinel:
+    enabled: true #打开sentinel对OpenFeign的支持
+logging:
+  level:
+    com.zrk.mall.demo.service.UserService: debug
 service-url:
   user-service: http://mall-demo-user # 项目名
