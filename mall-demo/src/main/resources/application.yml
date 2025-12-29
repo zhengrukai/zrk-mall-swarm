@@ -5,7 +5,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:mysql://118.31.77.172:33060/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://118.31.77.172:33060/seata-order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: dev
     password: dev-zrk
   data:
@@ -17,6 +17,7 @@ spring:
       timeout: 300ms # 连接超时时间（毫秒）
 mybatis:
   mapper-locations:
+    - classpath:dao/*.xml
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
 management:
