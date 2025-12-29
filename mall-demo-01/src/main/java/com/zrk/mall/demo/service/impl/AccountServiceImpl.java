@@ -26,7 +26,7 @@ public class AccountServiceImpl implements AccountService {
     public void decrease(Long userId, BigDecimal money) {
         LOGGER.info("------->account-service中扣减账户余额开始");
         //模拟业务异常，制造by zero异常
-        //int i=1/0;
+        int i=1/0;
         accountDao.decrease(userId, money);
         LOGGER.info("------->account-service中扣减账户余额结束");
     }

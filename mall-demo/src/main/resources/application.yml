@@ -8,6 +8,37 @@ spring:
     url: jdbc:mysql://118.31.77.172:33060/seata-order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: dev
     password: dev-zrk
+    hikari:
+      # 连接池核心配置
+      maximum-pool-size: 30
+      minimum-idle: 5
+
+      # 连接超时和生命周期
+      connection-timeout: 30000
+      validation-timeout: 5000
+      idle-timeout: 300000  # 5分钟
+      max-lifetime: 600000  # 10分钟
+
+      # 连接验证和保活
+      connection-test-query: SELECT 1
+      keepalive-time: 45000  # 每45秒发送保活查询
+      initialization-fail-timeout: 1
+
+      # 连接泄漏检测
+      leak-detection-threshold: 30000  # 30秒
+
+      # 连接关闭配置
+      allow-pool-suspension: false
+      is-auto-commit: true
+
+      # 数据源属性
+      data-source-properties:
+        socketTimeout: 60000
+        connectTimeout: 30000
+        autoReconnect: true
+        maxReconnects: 10
+        initialTimeout: 2
+        tcpKeepAlive: true
   data:
     redis:
       host: 118.31.77.172 # Redis服务器地址
