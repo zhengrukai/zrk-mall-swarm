@@ -1,0 +1,36 @@
+server:
+  port: 8201
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true # 使用小写 service-id
+      routes: # 配置路由路径
+        - id: mall-admin
+          uri: lb://mall-admin
+          predicates:
+            - Path=/mall-admin/**
+          filters:
+            - StripPrefix=1
+  data:
+    redis:
+      database: 1
+      port: 63790
+      host: 118.31.77.172
+      password: xhb2025top # Redis服务器连接密码（默认为空）
+      timeout: 300ms # 连接超时时间（毫秒）
+knife4j:
+  gateway:
+    enabled: true
+    strategy: discover # 网关文档聚合方式：服务发现（自动聚合）
+    discover:
+      version: openapi3 # 配置 OpenAPI3 规范
+      enabled: true # 配置开启服务发现
+      excluded-services: mall-monitor # 排除监控服务
+    tags-sorter: order # 配置 tag 排序规则
+    operations-sorter: order # 配置 operation 排序规则

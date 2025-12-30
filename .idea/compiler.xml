@@ -7,14 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mall-demo-01" />
         <module name="mall-common" />
-        <module name="mall-demo-02" />
         <module name="mall-admin" />
         <module name="mall-mbg" />
         <module name="mall-demo" />
+        <module name="mall-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mall-demo-01" target="17" />
+      <module name="mall-demo-02" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,6 +26,7 @@
       <module name="mall-demo" options="-parameters -parameters" />
       <module name="mall-demo-01" options="-parameters -parameters" />
       <module name="mall-demo-02" options="-parameters -parameters" />
+      <module name="mall-gateway" options="-parameters -parameters" />
       <module name="mall-mbg" options="-parameters -parameters" />
       <module name="zrk-mall-swarm" options="-parameters -parameters" />
     </option>
