@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * 远程调用account-service的接口
  * Created by zrk on 2025/12/29
  */
-@FeignClient(value = "mall-demo-01")
+@FeignClient(value = "mall-demo-01", contextId = "accountService")
 public interface AccountService {
 
     /**

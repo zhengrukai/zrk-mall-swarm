@@ -5,8 +5,6 @@ import com.zrk.mall.demo.domain.Order;
 import com.zrk.mall.demo.service.AccountService;
 import com.zrk.mall.demo.service.OrderService;
 import com.zrk.mall.demo.service.StorageService;
-import com.zrk.mall.mapper.TblOrderMapper;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +30,6 @@ public class OrderServiceImpl implements OrderService {
      * 创建订单->调用库存服务扣减库存->调用账户服务扣减账户余额->修改订单状态
      */
     @Override
-//    @GlobalTransactional
     public void create(Order order) {
         LOGGER.info("------->下单开始");
         //本应用创建订单

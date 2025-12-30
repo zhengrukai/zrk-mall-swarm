@@ -10,6 +10,7 @@
         <module name="mall-demo-01" />
         <module name="mall-common" />
         <module name="mall-demo-02" />
+        <module name="mall-admin" />
         <module name="mall-mbg" />
         <module name="mall-demo" />
       </profile>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mall-admin" options="-parameters -parameters" />
       <module name="mall-common" options="-parameters -parameters" />
       <module name="mall-demo" options="-parameters -parameters" />
       <module name="mall-demo-01" options="-parameters -parameters" />

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * OpenFeign远程调用user-service的业务类
  * Created by zrk on 2025/12/28
  */
-@FeignClient(value = "mall-demo-user", fallback = UserFallbackService.class)
+@FeignClient(value = "mall-demo-01", contextId = "userService", fallback = UserFallbackService.class)
 public interface UserService {
     @PostMapping("/user/create")
     CommonResult create(@RequestBody User user);

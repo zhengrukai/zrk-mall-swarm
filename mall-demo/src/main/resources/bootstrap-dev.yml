@@ -5,11 +5,9 @@ spring:
         server-addr: http://118.31.77.172:8848
         username: nacos
         password: nacos
-        group: SEATA_GROUP
       config:
         server-addr: http://118.31.77.172:8848
         file-extension: yaml
-        group: SEATA_GROUP
         username: nacos
         password: nacos
     openfeign:
@@ -33,35 +31,8 @@ spring:
         enabled: true
         max-retries-on-same-service-instance: 1
         max-retries-on-next-service-instance: 1
-    sentinel:
-      transport:
-        dashboard: localhost:8080 # 配置 sentinel dashboard 地址
-        port: 8719
-seata:
-  enabled: true
-  application-id: ${spring.application.name}
-  tx-service-group: default_tx_group
-  registry:
-    type: nacos
-    nacos:
-      application: seata-server
-      server-addr: 118.31.77.172:8848
-      username: nacos
-      password: nacos
-      group: SEATA_GROUP
-  config:
-    type: nacos
-    nacos:
-      server-addr: 118.31.77.172:8848
-      group: SEATA_GROUP
-      username: nacos
-      password: nacos
-      data-id: seataServer.properties
-feign:
-  sentinel:
-    enabled: true #打开sentinel对OpenFeign的支持
 logging:
   level:
     com.zrk.mall.demo.service.UserService: debug
 service-url:
-  user-service: http://mall-demo-user # 项目名
+  user-service: http://mall-demo-01 # 项目名

@@ -1,5 +1,6 @@
 package com.zrk.mall.demo.service.impl;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.zrk.mall.demo.domain.User;
 import com.zrk.mall.demo.service.UserService;
 import jakarta.annotation.PostConstruct;
