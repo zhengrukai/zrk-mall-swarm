@@ -12,8 +12,10 @@
         <module>mall-common</module>
         <module>mall-mbg</module>
         <module>mall-demo</module>
-        <module>mall-admin</module>
         <module>mall-gateway</module>
+        <module>mall-auth</module>
+        <module>mall-admin</module>
+        <module>mall-monitor</module>
     </modules>
 
     <parent>

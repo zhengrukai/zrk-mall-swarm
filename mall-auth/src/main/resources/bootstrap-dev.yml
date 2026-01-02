@@ -2,11 +2,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: http://nacos-registry:8848
+        server-addr: http://118.31.77.172:8848
         username: nacos
         password: nacos
       config:
-        server-addr: http://nacos-registry:8848
+        server-addr: http://118.31.77.172:8848
         file-extension: yaml
         username: nacos
         password: nacos
+logging:
+  level:
+    root: debug

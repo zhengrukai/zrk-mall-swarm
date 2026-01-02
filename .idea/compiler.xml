@@ -7,10 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mall-common" />
         <module name="mall-admin" />
         <module name="mall-mbg" />
         <module name="mall-demo" />
+        <module name="mall-auth" />
+        <module name="mall-monitor" />
+        <module name="mall-common" />
         <module name="mall-gateway" />
       </profile>
     </annotationProcessing>
@@ -22,12 +24,14 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mall-admin" options="-parameters -parameters" />
+      <module name="mall-auth" options="-parameters -parameters" />
       <module name="mall-common" options="-parameters -parameters" />
       <module name="mall-demo" options="-parameters -parameters" />
       <module name="mall-demo-01" options="-parameters -parameters" />
       <module name="mall-demo-02" options="-parameters -parameters" />
       <module name="mall-gateway" options="-parameters -parameters" />
       <module name="mall-mbg" options="-parameters -parameters" />
+      <module name="mall-monitor" options="-parameters -parameters" />
       <module name="zrk-mall-swarm" options="-parameters -parameters" />
     </option>
   </component>

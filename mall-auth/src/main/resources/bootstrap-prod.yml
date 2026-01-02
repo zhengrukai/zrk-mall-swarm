@@ -10,3 +10,6 @@ spring:
         file-extension: yaml
         username: nacos
         password: nacos
+logging:
+  level:
+    root: info
