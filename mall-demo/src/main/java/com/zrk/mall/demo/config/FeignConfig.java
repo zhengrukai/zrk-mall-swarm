@@ -1,6 +1,8 @@
 package com.zrk.mall.demo.config;
 
+import com.zrk.mall.demo.component.FeignRequestInterceptor;
 import feign.Logger;
+import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,5 +15,10 @@ public class FeignConfig {
     @Bean
     Logger.Level feightLoggerLevel() {
         return Logger.Level.FULL;
+    }
+
+    @Bean
+    RequestInterceptor requestInterceptor() {
+        return new FeignRequestInterceptor();
     }
 }

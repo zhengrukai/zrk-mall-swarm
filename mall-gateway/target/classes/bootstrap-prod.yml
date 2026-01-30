@@ -3,6 +3,10 @@ spring:
     nacos:
       discovery:
         server-addr: http://nacos-registry:8848
+        username: nacos
+        password: nacos
       config:
         server-addr: http://nacos-registry:8848
         file-extension: yaml
+        username: nacos
+        password: nacos

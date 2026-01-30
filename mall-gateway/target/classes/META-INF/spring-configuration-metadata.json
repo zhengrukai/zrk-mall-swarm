@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "secure.ignore",
+      "type": "com.zrk.mall.config.IgnoreUrlsConfig",
+      "sourceType": "com.zrk.mall.config.IgnoreUrlsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "secure.ignore.urls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.zrk.mall.config.IgnoreUrlsConfig"
+    }
+  ],
+  "hints": []
+}
